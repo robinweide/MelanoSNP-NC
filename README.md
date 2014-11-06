@@ -6,7 +6,6 @@ Familial melanoma predisposition-SNPs in non-coding regions
 > Please contact Robin directly via his [email-address]
 
 
-
 Version
 ----
 
