@@ -111,11 +111,12 @@ if args['Funseq2'] is not None:
         scorebookN, scorebookC, countbookF = funseq2scorecount(frow, scorebookN, scorebookC, countbookF)
         frow.close()
     Ffile.close()
-    scorebookF = funseqzscore(scorebookN, scorebookC)
 elif args['CADD'] is not None:
     Cfile = open(args['CADD'], 'r')
 elif args['SuRFR'] is not None:
     Sfile = open(args['SuRFR'], 'r')
+
+# CHECK FOR MISSING VARIANTS BY COMPARING THE COORDS IN THE FILES WITH THE
 
 
 
