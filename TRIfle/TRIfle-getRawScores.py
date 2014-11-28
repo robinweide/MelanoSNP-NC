@@ -115,7 +115,7 @@ if args['DANN'] is not None:
     Cfile = open(args['DANN'], 'r')
     for row in Cfile:
         crow = open(row.rstrip(), 'r')
-        scorebookD, countbookD = DANN2scorecount(crow, scorebookD, countbookD)
+        scorebookD, countbookD = cadd2scorecount(crow, scorebookD, countbookD)
         crow.close()
     Cfile.close()
 
