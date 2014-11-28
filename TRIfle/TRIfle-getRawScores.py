@@ -68,7 +68,8 @@ def cadd2scorecount(Ffile, scorebookC, countbookC):
             continue
         else:
             fields = re.split(r'\t+', row)
-            coord = str(str("chr") + fields[0]) + str(":") + str(fields[1] + str("|") + str(fields[3]))
+            print(fields)
+            coord = str("chr") + fields[0]) + str(":") + str(fields[1] + str("|") + str(fields[3])
             score = float(fields[5])
             if coord in scorebookC:
                 if float(scorebookC[coord]) < float(score):
