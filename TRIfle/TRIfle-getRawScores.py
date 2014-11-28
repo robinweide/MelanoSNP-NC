@@ -12,6 +12,7 @@ parser = argparse.ArgumentParser(
     description='This is TRIfle: integrated non-coding variant prioritisation. Please give ONE input-file.')
 parser.add_argument('-f', '--Funseq2', help='input: list of Output.vcf', required=False)
 parser.add_argument('-c', '--CADD', help='input: list of scores.tsv', required=False)
+parser.add_argument('-d', '--DANN', help='input: list of scores.tsv', required=False)
 parser.add_argument('-s', '--SuRFR', help='input: list of output.tsv', required=False)
 #parser.add_argument('-i', '--input', help='input: list of variant calls', required=True)
 #parser.add_argument('-cc','--Case-Control', help='Case(1) or Control(0)', required=True, default='1')
@@ -86,6 +87,8 @@ scorebookFN = {}
 scorebookFC = {}
 scorebookC = {}
 countbookC = {}
+scorebookD = {}
+countbookD = {}
 variantCoordList = []
 
 #Main script
@@ -107,9 +110,30 @@ if args['CADD'] is not None:
     Cfile.close()
 if args['SuRFR'] is not None:
     Sfile = open(args['SuRFR'], 'r')
+if args['CADD'] is not None:
+    Cfile = open(args['CADD'], 'r')
+    for row in Cfile:
+        crow = open(row.rstrip(), 'r')
+        scorebookD, countbookD = cadd2scorecount(crow, scorebookD, countbookD)
+        crow.close()
+    Cfile.close()
+
 
 
 # Adding zeros to missing scores
+for key,value in scorebookD.items():
+    if key in scorebookFC:
+        continue
+    else:
+        scorebookFC[key] = float(0)
+    if key in scorebookFN:
+        continue
+    else:
+        scorebookFN[key] = float(0)
+    if key in scorebookC:
+        continue
+    else:
+        scorebookC[key] = float(0)
 for key,value in scorebookC.items():
     if key in scorebookFC:
         continue
@@ -119,6 +143,10 @@ for key,value in scorebookC.items():
         continue
     else:
         scorebookFN[key] = float(0)
+    if key in scorebookD:
+        continue
+    else:
+        scorebookD[key] = float(0)
 for key,value in scorebookFC.items():
     if key in scorebookC:
         continue
@@ -128,6 +156,10 @@ for key,value in scorebookFC.items():
         continue
     else:
         scorebookFN[key] = float(0)
+    if key in scorebookD:
+        continue
+    else:
+        scorebookD[key] = float(0)
 for key,value in scorebookFN.items():
     if key in scorebookC:
         continue
@@ -137,23 +169,44 @@ for key,value in scorebookFN.items():
         continue
     else:
         scorebookFC[key] = float(0)
+    if key in scorebookD:
+        continue
+    else:
+        scorebookD[key] = float(0)
 #same with counts
+for key,value in countbookD.items():
+    if key in countbookF:
+        continue
+    else:
+        countbookF[key] = float(value)
+    if key in countbookC:
+        continue
+    else:
+        countbookC[key] = float(value)
 for key,value in countbookC.items():
     if key in countbookF:
         continue
     else:
         countbookF[key] = float(value)
+    if key in countbookD:
+        continue
+    else:
+        countbookD[key] = float(value)
 for key,value in countbookF.items():
     if key in countbookC:
         continue
     else:
         countbookC[key] = float(value)
+    if key in countbookD:
+        continue
+    else:
+        countbookD[key] = float(value)
 
 
 
 #print tab-delim: coord:FC:FN:C:Count
-header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","Frequency"]
+header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","Frequency"]
 print('\t'.join(map(str,header)))
-for coord,score in scorebookFC.items():
-    row = [coord, score, scorebookFN[coord],scorebookC[coord],countbookC[coord]]
+for coord,score in scorebookFN.items():
+    row = [coord, score, scorebookFC[coord],scorebookC[coord],scorebookD[coord],countbookC[coord]]
     print('\t'.join(map(str,row)))

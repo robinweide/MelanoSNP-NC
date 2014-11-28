@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bda9fff-49af-45ef-aba7-e21dadb9bf5c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TRIfle/funseq-file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sampleVCFFunseq2.vcf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TRIfle/TRIfle_convert.py" afterPath="$PROJECT_DIR$/TRIfle/TRIfle_convert.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py" afterPath="$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py" />
     </list>
     <ignored path="MelanoSNP-NC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,11 +44,11 @@
       <file leaf-file-name="TRIfle-getRawScores.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.79820627" vertical-offset="1236" max-vertical-offset="1905">
-              <caret line="155" column="33" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.7085202" vertical-offset="2031" max-vertical-offset="2700">
+              <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
-                <element signature="e#986#2488#0" expanded="false" />
+                <element signature="e#1072#2574#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -310,13 +306,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997006" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -359,6 +355,30 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle_convert.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1245">
+          <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="40" />
+          <folding>
+            <element signature="e#18#33#0" expanded="true" />
+            <element signature="e#975#1096#0" expanded="false" />
+            <element signature="e#1119#1253#0" expanded="false" />
+            <element signature="e#1323#2899#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2505">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#33#0" expanded="true" />
+            <element signature="e#1072#2574#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle_convert.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="1020">
           <caret line="118" column="74" selection-start-line="0" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding>
@@ -376,7 +396,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
-            <element signature="e#986#2488#0" expanded="false" />
+            <element signature="e#1072#2574#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -514,11 +534,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79820627" vertical-offset="1236" max-vertical-offset="1905">
-          <caret line="155" column="33" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.7085202" vertical-offset="2031" max-vertical-offset="2700">
+          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
-            <element signature="e#986#2488#0" expanded="false" />
+            <element signature="e#1072#2574#0" expanded="false" />
           </folding>
         </state>
       </provider>
