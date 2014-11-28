@@ -80,7 +80,26 @@ def cadd2scorecount(Ffile, scorebookC, countbookC):
             else:
                 countbookC[coord] = float(1)
     return(scorebookC, countbookC)
-
+def DANN2scorecount(Ffile, scorebookD, countbookD):
+    score = 0.0
+    coord = ""
+    for row in Ffile:
+        if row.startswith('#'):
+            continue
+        else:
+            fields = re.split(r'\t+', row)
+            coord = str(str("chr") + fields[0] + str(":") + str(fields[1]) + str("|") + str(fields[3]))
+            score = float(fields[5])
+            if coord in scorebookC:
+                if float(scorebookC[coord]) < float(score):
+                    scorebookC[coord] = float(score)
+            else:
+                    scorebookC[coord] = score
+            if coord in countbookC:
+                countbookC[coord] += 1
+            else:
+                countbookC[coord] = float(1)
+    return(scorebookD, countbookD)
 
 #General declarations
 countbookF = {}
@@ -115,7 +134,7 @@ if args['CADD'] is not None:
     Cfile = open(args['CADD'], 'r')
     for row in Cfile:
         crow = open(row.rstrip(), 'r')
-        scorebookD, countbookD = cadd2scorecount(crow, scorebookD, countbookD)
+        scorebookD, countbookD = DANN2scorecount(crow, scorebookD, countbookD)
         crow.close()
     Cfile.close()
 
