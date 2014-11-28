@@ -90,15 +90,15 @@ def DANN2scorecount(Ffile, scorebookD, countbookD):
             fields = re.split(r'\t+', row)
             coord = str(str("chr") + fields[0] + str(":") + str(fields[1]) + str("|") + str(fields[3]))
             score = float(fields[5])
-            if coord in scorebookC:
-                if float(scorebookC[coord]) < float(score):
-                    scorebookC[coord] = float(score)
+            if coord in scorebookD:
+                if float(scorebookD[coord]) < float(score):
+                    scorebookD[coord] = float(score)
             else:
-                    scorebookC[coord] = score
-            if coord in countbookC:
-                countbookC[coord] += 1
+                    scorebookD[coord] = score
+            if coord in countbookD:
+                countbookD[coord] += 1
             else:
-                countbookC[coord] = float(1)
+                countbookD[coord] = float(1)
     return(scorebookD, countbookD)
 
 #General declarations
