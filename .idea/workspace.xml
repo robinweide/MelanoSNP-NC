@@ -29,11 +29,11 @@
       <file leaf-file-name="TRIfle-getRawScores.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44852942" vertical-offset="295" max-vertical-offset="2970">
-              <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.16176471" vertical-offset="1120" max-vertical-offset="2970">
+              <caret line="101" column="25" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
-                <element signature="e#2468#3153#0" expanded="false" />
+                <element signature="e#2439#3124#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -335,7 +335,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py</url>
-          <line>90</line>
+          <line>89</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
@@ -350,7 +350,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
-            <element signature="e#2468#3153#0" expanded="false" />
+            <element signature="e#2439#3124#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -361,7 +361,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
-            <element signature="e#2468#3153#0" expanded="false" />
+            <element signature="e#2439#3124#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -372,7 +372,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
-            <element signature="e#2468#3153#0" expanded="false" />
+            <element signature="e#2439#3124#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -396,7 +396,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
-            <element signature="e#2468#3153#0" expanded="false" />
+            <element signature="e#2439#3124#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -420,7 +420,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
-            <element signature="e#2468#3153#0" expanded="false" />
+            <element signature="e#2439#3124#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -558,11 +558,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44852942" vertical-offset="295" max-vertical-offset="2970">
-          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.16176471" vertical-offset="1120" max-vertical-offset="2970">
+          <caret line="101" column="25" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
-            <element signature="e#2468#3153#0" expanded="false" />
+            <element signature="e#2439#3124#0" expanded="false" />
           </folding>
         </state>
       </provider>

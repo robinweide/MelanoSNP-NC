@@ -43,7 +43,6 @@ def funseq2scorecount(Ffile, scorebookFN, scorebookFC, countbookF):
                     continue
                 else:
                     scorebookFC[coord] = float(score)
-                print(score)
             else:
                 index = row.find("NCDS", 40)
                 if not index == -1:
@@ -100,6 +99,7 @@ if args['Funseq2'] is not None:
         frow = open(row.rstrip(), 'r')
         scorebookFN, scorebookFC, countbookF = funseq2scorecount(frow, scorebookFN, scorebookFC, countbookF)
         frow.close()
+        print(scorebookFN)
     Ffile.close()
 if args['CADD'] is not None:
     Cfile = open(args['CADD'], 'r')
