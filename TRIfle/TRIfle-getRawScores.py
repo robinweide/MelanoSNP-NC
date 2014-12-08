@@ -14,6 +14,7 @@ parser.add_argument('-f', '--Funseq2', help='input: list of Output.vcf', require
 parser.add_argument('-c', '--CADD', help='input: list of scores.tsv', required=False)
 parser.add_argument('-d', '--DANN', help='input: list of scores.tsv', required=False)
 parser.add_argument('-s', '--SuRFR', help='input: list of output.tsv', required=False)
+parser.add_argument('-cd', '--controlDANN', help='input: list of control scores.tsv', required=False)
 #parser.add_argument('-i', '--input', help='input: list of variant calls', required=True)
 #parser.add_argument('-cc','--Case-Control', help='Case(1) or Control(0)', required=True, default='1')
 args = vars(parser.parse_args())
@@ -90,7 +91,10 @@ scorebookC = {}
 countbookC = {}
 scorebookD = {}
 countbookD = {}
+cscorebookD = {}
+ccountbookD = {}
 variantCoordList = []
+cvariantCoordList = []
 
 #Main script
 
@@ -116,6 +120,13 @@ if args['DANN'] is not None:
     for row in Cfile:
         crow = open(row.rstrip(), 'r')
         scorebookD, countbookD, variantCoordList = cadd2scorecount(crow, scorebookD, countbookD, variantCoordList)
+        crow.close()
+    Cfile.close()
+if args['controlDANN'] is not None:
+    Cfile = open(args['controlDANN'], 'r')
+    for row in Cfile:
+        crow = open(row.rstrip(), 'r')
+        cscorebookD, ccountbookD, cvariantCoordList = cadd2scorecount(crow, cscorebookD, ccountbookD, cvariantCoordList)
         crow.close()
     Cfile.close()
 
@@ -161,7 +172,7 @@ coords.sort()
 
 
 for coord in coords:
-    row = [coord, scorebookFN.get(coord, float(0)),scorebookFC.get(coord, float(0)), scorebookC.get(coord, float(0)),scorebookD.get(coord, float(0)), countbookD.get(coord, float(0))]
+    row = [coord, scorebookFN.get(coord, float(0)),scorebookFC.get(coord, float(0)), scorebookC.get(coord, float(0)),scorebookD.get(coord, float(0)), countbookD.get(coord, float(0)), ccountbookD.get(coord, float(0))]
     print('\t'.join(map(str,row)))
 #for coord,score in scorebookD.items():
 #    row = [coord, score, scorebookFC[coord],scorebookC[coord],scorebookD[coord],countbookC[coord]]
