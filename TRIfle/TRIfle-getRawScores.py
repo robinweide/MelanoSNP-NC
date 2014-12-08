@@ -126,8 +126,6 @@ if args['DANN'] is not None:
 
 coords = list(set(variantCoordList))
 coords.sort()
-for p in coords:
-    print(p)
 
 
 #if scorebookFN.keys() == scorebookFC.keys():
@@ -163,7 +161,7 @@ for p in coords:
 
 
 for coord in coords:
-    row = [scorebookFC.get(coord, float(0))]
+    row = [scorebookFC[coord]]
     print('\t'.join(map(str,row)))
 #for coord,score in scorebookD.items():
 #    row = [coord, score, scorebookFC[coord],scorebookC[coord],scorebookD[coord],countbookC[coord]]
