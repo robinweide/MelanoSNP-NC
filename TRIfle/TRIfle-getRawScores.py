@@ -99,7 +99,7 @@ if args['Funseq2'] is not None:
         frow = open(row.rstrip(), 'r')
         scorebookFN, scorebookFC, countbookF = funseq2scorecount(frow, scorebookFN, scorebookFC, countbookF)
         frow.close()
-        print(scorebookFN)
+        print(scorebookFC)
     Ffile.close()
 if args['CADD'] is not None:
     Cfile = open(args['CADD'], 'r')
