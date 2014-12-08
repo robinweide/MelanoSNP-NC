@@ -22,7 +22,7 @@ if not any(args.values()):
 
 
 #FUNCTIONS
-def funseq2scorecount(Ffile, scorebookFN, scorebookFC, countbookF):
+def funseq2scorecount(Ffile, scorebookFN, scorebookFC, countbookF, variantCoordList):
     score = 0
     coord = ""
     count = 0
@@ -34,6 +34,7 @@ def funseq2scorecount(Ffile, scorebookFN, scorebookFC, countbookF):
         else:
             fields = re.split(r'\t+', row)
             coord = str(fields[0]) + str(":") + str(fields[1] + str("|") + str(fields[4]))
+            variantcoordlist.append(coord)
             index = row.find("CDSS", 40)
             if not index == -1:
                 inforow = row[index:]
@@ -57,8 +58,8 @@ def funseq2scorecount(Ffile, scorebookFN, scorebookFC, countbookF):
                 countbookF[coord] += 1
             else:
                 countbookF[coord] = float(1)
-    return(scorebookFN, scorebookFC, countbookF)
-def cadd2scorecount(Ffile, scorebookC, countbookC):
+    return(scorebookFN, scorebookFC, countbookF, variantCoordList)
+def cadd2scorecount(Ffile, scorebookC, countbookC, variantCoordList):
     score = 0.0
     coord = ""
     for row in Ffile:
@@ -67,6 +68,7 @@ def cadd2scorecount(Ffile, scorebookC, countbookC):
         else:
             fields = re.split(r'\t+', row)
             coord = str(str("chr") + fields[0] + str(":") + str(fields[1]) + str("|") + str(fields[3]))
+            variantcoordlist.append(coord)
             score = float(fields[5])
             if coord in scorebookC:
                 if float(scorebookC[coord]) < float(score):
@@ -77,7 +79,7 @@ def cadd2scorecount(Ffile, scorebookC, countbookC):
                 countbookC[coord] += 1
             else:
                 countbookC[coord] = float(1)
-    return(scorebookC, countbookC)
+    return(scorebookC, countbookC, variantCoordList)
 
 
 #General declarations
@@ -97,14 +99,14 @@ if args['Funseq2'] is not None:
     Ffile = open(args['Funseq2'], 'r')
     for row in Ffile:
         frow = open(row.rstrip(), 'r')
-        scorebookFN, scorebookFC, countbookF = funseq2scorecount(frow, scorebookFN, scorebookFC, countbookF)
+        scorebookFN, scorebookFC, countbookF, variantCoordList = funseq2scorecount(frow, scorebookFN, scorebookFC, countbookF, variantCoordList)
         frow.close()
     Ffile.close()
 if args['CADD'] is not None:
     Cfile = open(args['CADD'], 'r')
     for row in Cfile:
         crow = open(row.rstrip(), 'r')
-        scorebookC, countbookC = cadd2scorecount(crow, scorebookC, countbookC)
+        scorebookC, countbookC, variantCoordList = cadd2scorecount(crow, scorebookC, countbookC,variantCoordList)
         crow.close()
     Cfile.close()
 if args['SuRFR'] is not None:
@@ -113,7 +115,7 @@ if args['DANN'] is not None:
     Cfile = open(args['DANN'], 'r')
     for row in Cfile:
         crow = open(row.rstrip(), 'r')
-        scorebookD, countbookD = cadd2scorecount(crow, scorebookD, countbookD)
+        scorebookD, countbookD, variantCoordList = cadd2scorecount(crow, scorebookD, countbookD, variantCoordList)
         crow.close()
     Cfile.close()
 
@@ -121,147 +123,10 @@ if args['DANN'] is not None:
 
 # Adding zeros to missing scores
 
-for key,value in scorebookD.items():
-    if key in scorebookFC:
-        continue
-    else:
-        scorebookFC[key] = float(0)
-    if key in scorebookFN:
-        continue
-    else:
-        scorebookFN[key] = float(0)
-    if key in scorebookC:
-        continue
-    else:
-        scorebookC[key] = float(0)
-for key,value in scorebookC.items():
-    if key in scorebookFC:
-        continue
-    else:
-        scorebookFC[key] = float(0)
-    if key in scorebookFN:
-        continue
-    else:
-        scorebookFN[key] = float(0)
-    if key in scorebookD:
-        continue
-    else:
-        scorebookD[key] = float(0)
-for key,value in scorebookFC.items():
-    if key in scorebookC:
-        continue
-    else:
-        scorebookC[key] = float(0)
-    if key in scorebookFN:
-        continue
-    else:
-        scorebookFN[key] = float(0)
-    if key in scorebookD:
-        continue
-    else:
-        scorebookD[key] = float(0)
-for key,value in scorebookFN.items():
-    if key in scorebookC:
-        continue
-    else:
-        scorebookC[key] = float(0)
-    if key in scorebookFC:
-        continue
-    else:
-        scorebookFC[key] = float(0)
-    if key in scorebookD:
-        continue
-    else:
-        scorebookD[key] = float(0)
-for key,value in scorebookD.items():
-    if key in scorebookFC:
-        continue
-    else:
-        scorebookFC[key] = float(0)
-    if key in scorebookFN:
-        continue
-    else:
-        scorebookFN[key] = float(0)
-    if key in scorebookC:
-        continue
-    else:
-        scorebookC[key] = float(0)
-for key,value in scorebookC.items():
-    if key in scorebookFC:
-        continue
-    else:
-        scorebookFC[key] = float(0)
-    if key in scorebookFN:
-        continue
-    else:
-        scorebookFN[key] = float(0)
-    if key in scorebookD:
-        continue
-    else:
-        scorebookD[key] = float(0)
-for key,value in scorebookFC.items():
-    if key in scorebookC:
-        continue
-    else:
-        scorebookC[key] = float(0)
-    if key in scorebookFN:
-        continue
-    else:
-        scorebookFN[key] = float(0)
-    if key in scorebookD:
-        continue
-    else:
-        scorebookD[key] = float(0)
-for key,value in scorebookFN.items():
-    if key in scorebookC:
-        continue
-    else:
-        scorebookC[key] = float(0)
-    if key in scorebookFC:
-        continue
-    else:
-        scorebookFC[key] = float(0)
-    if key in scorebookD:
-        continue
-    else:
-        scorebookD[key] = float(0)
-#same with counts
-for key,value in countbookD.items():
-    if key in countbookF:
-        continue
-    else:
-        countbookF[key] = float(value)
-    if key in countbookC:
-        continue
-    else:
-        countbookC[key] = float(value)
-for key,value in countbookC.items():
-    if key in countbookF:
-        continue
-    else:
-        countbookF[key] = float(value)
-    if key in countbookD:
-        continue
-    else:
-        countbookD[key] = float(value)
-for key,value in countbookF.items():
-    if key in countbookC:
-        continue
-    else:
-        countbookC[key] = float(value)
-    if key in countbookD:
-        continue
-    else:
-        countbookD[key] = float(value)
 
-#for key,value in scorebookFN.items():
-#    print(key)
-#for key,value in scorebookFC.items():
-#    print(key)
-#for key,value in scorebookC.items():
-#    print(key)
-#for key,value in scorebookD.items():
-#    print(len(key))
+coords = list(set(variantCoordList))
+print(coords)
+
 if scorebookFN.keys() == scorebookFC.keys():
     print("FN=FC")
 if scorebookFN.keys() == scorebookC.keys():
