@@ -201,14 +201,39 @@ for key,value in countbookF.items():
     else:
         countbookD[key] = float(value)
 
-for key,value in scorebookFN.items():
-    print(key)
-for key,value in scorebookFC.items():
-    print(key)
-for key,value in scorebookC.items():
-    print(key)
-for key,value in scorebookD.items():
-    print(key)
+#for key,value in scorebookFN.items():
+#    print(key)
+#for key,value in scorebookFC.items():
+#    print(key)
+#for key,value in scorebookC.items():
+#    print(key)
+#for key,value in scorebookD.items():
+#    print(len(key))
+if scorebookFN.keys() == scorebookFC.keys()
+    print("FN=FC")
+if scorebookFN.keys() == scorebookC.keys()
+    print("FN=C")
+if scorebookFN.keys() == scorebookD.keys()
+    print("FN=D")
+if scorebookFC.keys() == scorebookFN.keys()
+    print("FC=FN")
+if scorebookFC.keys() == scorebookC.keys()
+    print("FC=C")
+if scorebookFC.keys() == scorebookD.keys()
+    print("FC=D")
+if scorebookD.keys() == scorebookFC.keys()
+    print("D=FC")
+if scorebookD.keys() == scorebookC.keys()
+    print("D=C")
+if scorebookD.keys() == scorebookFN.keys()
+    print("D=FN")
+if scorebookC.keys() == scorebookFC.keys()
+    print("C=FC")
+if scorebookC.keys() == scorebookD.keys()
+    print("C=D")
+if scorebookC.keys() == scorebookFN.keys()
+    print("DC=FN")
+
 
 #print tab-delim: coord:FC:FN:C:Count
 #header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","Frequency"]
