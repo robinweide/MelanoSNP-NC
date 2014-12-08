@@ -161,7 +161,7 @@ coords.sort()
 
 
 for coord in coords:
-    row = [scorebookC[coord]]
+    row = [scorebookFN.get(coord, float(0)]
     print('\t'.join(map(str,row)))
 #for coord,score in scorebookD.items():
 #    row = [coord, score, scorebookFC[coord],scorebookC[coord],scorebookD[coord],countbookC[coord]]
