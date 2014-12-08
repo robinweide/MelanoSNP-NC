@@ -159,6 +159,12 @@ for p in coords:
 #print tab-delim: coord:FC:FN:C:Count
 #header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","Frequency"]
 #print('\t'.join(map(str,header)))
+
+
+
+for coord in coords:
+    row = [scorebookFC.get(coord, float(0))]
+    print('\t'.join(map(str,row)))
 #for coord,score in scorebookD.items():
 #    row = [coord, score, scorebookFC[coord],scorebookC[coord],scorebookD[coord],countbookC[coord]]
 #    print('\t'.join(map(str,row)))
