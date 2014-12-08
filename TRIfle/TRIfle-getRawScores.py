@@ -125,7 +125,10 @@ if args['DANN'] is not None:
 
 
 coords = list(set(variantCoordList))
-print(*coords.sort(), sep='\n')
+coords.sort()
+for p in coords:
+    print(p)
+
 
 #if scorebookFN.keys() == scorebookFC.keys():
 #    print("FN=FC")
