@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bda9fff-49af-45ef-aba7-e21dadb9bf5c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py" afterPath="$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MelanoSNP-NC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +29,8 @@
       <file leaf-file-name="TRIfle-getRawScores.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.75" vertical-offset="1420" max-vertical-offset="4515">
-              <caret line="174" column="34" selection-start-line="174" selection-start-column="34" selection-end-line="174" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.18382353" vertical-offset="1420" max-vertical-offset="4515">
+              <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
               </folding>
@@ -552,8 +552,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.75" vertical-offset="1420" max-vertical-offset="4515">
-          <caret line="174" column="34" selection-start-line="174" selection-start-column="34" selection-end-line="174" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.18382353" vertical-offset="1420" max-vertical-offset="4515">
+          <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
           </folding>
