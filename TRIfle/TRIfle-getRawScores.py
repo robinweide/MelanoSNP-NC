@@ -201,7 +201,7 @@ for key,value in countbookF.items():
     else:
         countbookD[key] = float(value)
 
-print(scorebookFN)
+print(scorebookFC)
 
 #print tab-delim: coord:FC:FN:C:Count
 #header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","Frequency"]
