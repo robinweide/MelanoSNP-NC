@@ -95,6 +95,8 @@ cscorebookD = {}
 ccountbookD = {}
 variantCoordList = []
 cvariantCoordList = []
+controlcounter = float(0)
+casecounter = float(0)
 
 #Main script
 
@@ -120,6 +122,7 @@ if args['DANN'] is not None:
     for row in Cfile:
         crow = open(row.rstrip(), 'r')
         scorebookD, countbookD, variantCoordList = cadd2scorecount(crow, scorebookD, countbookD, variantCoordList)
+        casecounter +=1
         crow.close()
     Cfile.close()
 if args['controlDANN'] is not None:
@@ -127,6 +130,7 @@ if args['controlDANN'] is not None:
     for row in Cfile:
         crow = open(row.rstrip(), 'r')
         cscorebookD, ccountbookD, cvariantCoordList = cadd2scorecount(crow, cscorebookD, ccountbookD, cvariantCoordList)
+        controlcounter +=1
         crow.close()
     Cfile.close()
 
@@ -172,7 +176,7 @@ coords.sort()
 
 
 for coord in coords:
-    row = [coord, scorebookFN.get(coord, float(0)),scorebookFC.get(coord, float(0)), scorebookC.get(coord, float(0)),scorebookD.get(coord, float(0)), countbookD.get(coord, float(0)), ccountbookD.get(coord, float(0))]
+    row = [coord, scorebookFN.get(coord, float(0)),scorebookFC.get(coord, float(0)), scorebookC.get(coord, float(0)),scorebookD.get(coord, float(0)), countbookD.get(coord, float(0)), ccountbookD.get(coord, float(0)), float(100 * float(countbookD.get(coord, float(0)))/float(casecounter)), float(100 * float(ccountbookD.get(coord, float(0)))/float(controlcounter))]
     print('\t'.join(map(str,row)))
 #for coord,score in scorebookD.items():
 #    row = [coord, score, scorebookFC[coord],scorebookC[coord],scorebookD[coord],countbookC[coord]]
