@@ -135,49 +135,13 @@ if args['controlDANN'] is not None:
     Cfile.close()
 
 
-
-# Adding zeros to missing scores
-
-
 coords = list(set(variantCoordList))
 coords.sort()
 
-
-#if scorebookFN.keys() == scorebookFC.keys():
-#    print("FN=FC")
-#if scorebookFN.keys() == scorebookC.keys():
-#    print("FN=C")
-#if scorebookFN.keys() == scorebookD.keys():
-#    print("FN=D")
-#if scorebookFC.keys() == scorebookFN.keys():
-#    print("FC=FN")
-#if scorebookFC.keys() == scorebookC.keys():
-#    print("FC=C")
-#if scorebookFC.keys() == scorebookD.keys():
-#    print("FC=D")
-#if scorebookD.keys() == scorebookFC.keys():
-#    print("D=FC")
-#if scorebookD.keys() == scorebookC.keys():
-#    print("D=C")
-#if scorebookD.keys() == scorebookFN.keys():
-#    print("D=FN")
-#if scorebookC.keys() == scorebookFC.keys():
-#    print("C=FC")
-#if scorebookC.keys() == scorebookD.keys():
-#    print("C=D")
-#if scorebookC.keys() == scorebookFN.keys():
-#    print("DC=FN")
-
-
 #print tab-delim: coord:FC:FN:C:Count
-#header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","Frequency"]
-#print('\t'.join(map(str,header)))
-
-
+header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","FrequencyCase","FrequencyControl","PercCase","PercControl"]
+print('\t'.join(map(str,header)))
 
 for coord in coords:
     row = [coord, scorebookFN.get(coord, float(0)),scorebookFC.get(coord, float(0)), scorebookC.get(coord, float(0)),scorebookD.get(coord, float(0)), countbookD.get(coord, float(0)), ccountbookD.get(coord, float(0)), float(100 * float(countbookD.get(coord, float(0)))/float(casecounter)), float(100 * float(ccountbookD.get(coord, float(0)))/float(controlcounter))]
     print('\t'.join(map(str,row)))
-#for coord,score in scorebookD.items():
-#    row = [coord, score, scorebookFC[coord],scorebookC[coord],scorebookD[coord],countbookC[coord]]
-#    print('\t'.join(map(str,row)))
