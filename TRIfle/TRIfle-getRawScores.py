@@ -120,6 +120,59 @@ if args['DANN'] is not None:
 
 
 # Adding zeros to missing scores
+
+for key,value in scorebookD.items():
+    if key in scorebookFC:
+        continue
+    else:
+        scorebookFC[key] = float(0)
+    if key in scorebookFN:
+        continue
+    else:
+        scorebookFN[key] = float(0)
+    if key in scorebookC:
+        continue
+    else:
+        scorebookC[key] = float(0)
+for key,value in scorebookC.items():
+    if key in scorebookFC:
+        continue
+    else:
+        scorebookFC[key] = float(0)
+    if key in scorebookFN:
+        continue
+    else:
+        scorebookFN[key] = float(0)
+    if key in scorebookD:
+        continue
+    else:
+        scorebookD[key] = float(0)
+for key,value in scorebookFC.items():
+    if key in scorebookC:
+        continue
+    else:
+        scorebookC[key] = float(0)
+    if key in scorebookFN:
+        continue
+    else:
+        scorebookFN[key] = float(0)
+    if key in scorebookD:
+        continue
+    else:
+        scorebookD[key] = float(0)
+for key,value in scorebookFN.items():
+    if key in scorebookC:
+        continue
+    else:
+        scorebookC[key] = float(0)
+    if key in scorebookFC:
+        continue
+    else:
+        scorebookFC[key] = float(0)
+    if key in scorebookD:
+        continue
+    else:
+        scorebookD[key] = float(0)
 for key,value in scorebookD.items():
     if key in scorebookFC:
         continue
