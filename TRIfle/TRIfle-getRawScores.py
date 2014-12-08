@@ -99,7 +99,6 @@ if args['Funseq2'] is not None:
         frow = open(row.rstrip(), 'r')
         scorebookFN, scorebookFC, countbookF = funseq2scorecount(frow, scorebookFN, scorebookFC, countbookF)
         frow.close()
-        print(scorebookFC)
     Ffile.close()
 if args['CADD'] is not None:
     Cfile = open(args['CADD'], 'r')
@@ -202,7 +201,7 @@ for key,value in countbookF.items():
     else:
         countbookD[key] = float(value)
 
-
+print(scorebookFN)
 
 #print tab-delim: coord:FC:FN:C:Count
 #header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","Frequency"]

@@ -29,8 +29,8 @@
       <file leaf-file-name="TRIfle-getRawScores.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16176471" vertical-offset="1120" max-vertical-offset="2970">
-              <caret line="101" column="25" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.16176471" vertical-offset="2275" max-vertical-offset="2955">
+              <caret line="178" column="9" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
                 <element signature="e#2439#3124#0" expanded="false" />
@@ -558,8 +558,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16176471" vertical-offset="1120" max-vertical-offset="2970">
-          <caret line="101" column="25" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.16176471" vertical-offset="2275" max-vertical-offset="2955">
+          <caret line="178" column="9" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
             <element signature="e#2439#3124#0" expanded="false" />
