@@ -40,8 +40,7 @@ def funseq2scorecount(Ffile, scorebookFN, scorebookFC, countbookF):
                 CDSSfield = re.split(r'[;]', inforow)[0]
                 score = float(re.split(r'[=]+', CDSSfield)[-1].rstrip())
                 if coord in scorebookFC:
-                    if float(scorebookFC[coord]) < float(score):
-                        scorebookFC[coord] = float(score)
+                    continue
                 else:
                     scorebookFC[coord] = float(score)
             else:
@@ -51,8 +50,7 @@ def funseq2scorecount(Ffile, scorebookFN, scorebookFC, countbookF):
                     CDSSfield = re.split(r'[;]', inforow)[0]
                     score = float(re.split(r'[=]+', CDSSfield)[-1].rstrip())
                     if coord in scorebookFN:
-                        if float(scorebookFN[coord]) < float(score):
-                            scorebookFN[coord] = float(score)
+                        continue
                     else:
                         scorebookFN[coord] = float(score)
             if coord in countbookF:
