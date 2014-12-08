@@ -201,17 +201,17 @@ for key,value in countbookF.items():
     else:
         countbookD[key] = float(value)
 
-len(countbookC)
-len(countbookF)
-len(countbookD)
-len(scorebookFN)
-len(scorebookFC)
-len(scorebookC)
-len(scorebookD)
+print(len(countbookC))
+print(len(countbookF))
+print(len(countbookD))
+print(len(scorebookFN))
+print(len(scorebookFC))
+print(len(scorebookC))
+print(len(scorebookD))
 
 #print tab-delim: coord:FC:FN:C:Count
 #header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","Frequency"]
 #print('\t'.join(map(str,header)))
-for coord,score in scorebookD.items():
+#for coord,score in scorebookD.items():
 #    row = [coord, score, scorebookFC[coord],scorebookC[coord],scorebookD[coord],countbookC[coord]]
-    print('\t'.join(map(str,row)))
+#    print('\t'.join(map(str,row)))
