@@ -34,7 +34,7 @@ def funseq2scorecount(Ffile, scorebookFN, scorebookFC, countbookF, variantCoordL
         else:
             fields = re.split(r'\t+', row)
             coord = str(fields[0]) + str(":") + str(fields[1] + str("|") + str(fields[4]))
-            variantCoordlist.append(coord)
+            variantCoordList.append(coord)
             index = row.find("CDSS", 40)
             if not index == -1:
                 inforow = row[index:]
@@ -68,7 +68,7 @@ def cadd2scorecount(Ffile, scorebookC, countbookC, variantCoordList):
         else:
             fields = re.split(r'\t+', row)
             coord = str(str("chr") + fields[0] + str(":") + str(fields[1]) + str("|") + str(fields[3]))
-            variantCoordlist.append(coord)
+            variantCoordList.append(coord)
             score = float(fields[5])
             if coord in scorebookC:
                 if float(scorebookC[coord]) < float(score):
