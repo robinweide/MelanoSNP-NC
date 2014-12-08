@@ -125,32 +125,32 @@ if args['DANN'] is not None:
 
 
 coords = list(set(variantCoordList))
-print(coords)
+print(*coords.sort(), sep='\n')
 
-if scorebookFN.keys() == scorebookFC.keys():
-    print("FN=FC")
-if scorebookFN.keys() == scorebookC.keys():
-    print("FN=C")
-if scorebookFN.keys() == scorebookD.keys():
-    print("FN=D")
-if scorebookFC.keys() == scorebookFN.keys():
-    print("FC=FN")
-if scorebookFC.keys() == scorebookC.keys():
-    print("FC=C")
-if scorebookFC.keys() == scorebookD.keys():
-    print("FC=D")
-if scorebookD.keys() == scorebookFC.keys():
-    print("D=FC")
-if scorebookD.keys() == scorebookC.keys():
-    print("D=C")
-if scorebookD.keys() == scorebookFN.keys():
-    print("D=FN")
-if scorebookC.keys() == scorebookFC.keys():
-    print("C=FC")
-if scorebookC.keys() == scorebookD.keys():
-    print("C=D")
-if scorebookC.keys() == scorebookFN.keys():
-    print("DC=FN")
+#if scorebookFN.keys() == scorebookFC.keys():
+#    print("FN=FC")
+#if scorebookFN.keys() == scorebookC.keys():
+#    print("FN=C")
+#if scorebookFN.keys() == scorebookD.keys():
+#    print("FN=D")
+#if scorebookFC.keys() == scorebookFN.keys():
+#    print("FC=FN")
+#if scorebookFC.keys() == scorebookC.keys():
+#    print("FC=C")
+#if scorebookFC.keys() == scorebookD.keys():
+#    print("FC=D")
+#if scorebookD.keys() == scorebookFC.keys():
+#    print("D=FC")
+#if scorebookD.keys() == scorebookC.keys():
+#    print("D=C")
+#if scorebookD.keys() == scorebookFN.keys():
+#    print("D=FN")
+#if scorebookC.keys() == scorebookFC.keys():
+#    print("C=FC")
+#if scorebookC.keys() == scorebookD.keys():
+#    print("C=D")
+#if scorebookC.keys() == scorebookFN.keys():
+#    print("DC=FN")
 
 
 #print tab-delim: coord:FC:FN:C:Count
