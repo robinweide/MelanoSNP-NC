@@ -202,9 +202,11 @@ for key,value in countbookF.items():
         countbookD[key] = float(value)
 
 
-# print tab-delim: coord:FC:FN:C:Count
-header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","Frequency"]
-print('\t'.join(map(str,header)))
-for coord,value in countbookC.items():
-    row = [coord, scorebookFN[coord], scorebookFC[coord],scorebookC[coord],scorebookD[coord],value]
+
+#print tab-delim: coord:FC:FN:C:Count
+#header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","Frequency"]
+#print('\t'.join(map(str,header)))
+for coord,score in scorebookFN.items():
+    row = [coord, score, scorebookFC[coord]]
+#    row = [coord, score, scorebookFC[coord],scorebookC[coord],scorebookD[coord],countbookC[coord]]
     print('\t'.join(map(str,row)))
