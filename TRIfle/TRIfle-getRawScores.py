@@ -43,26 +43,26 @@ def funseq2scorecount(Ffile, scorebookFN, scorebookFC, countbookF, variantCoordL
                 index = row.find("CDSS", 40)
                 if not index == -1:
                     inforow = row[index:]
-                CDSSfield = re.split(r'[;]', inforow)[0]
-                score = float(re.split(r'[=]+', CDSSfield)[-1].rstrip())
-                if coord in scorebookFC:
-                    continue
+                    CDSSfield = re.split(r'[;]', inforow)[0]
+                    score = float(re.split(r'[=]+', CDSSfield)[-1].rstrip())
+                    if coord in scorebookFC:
+                        continue
+                    else:
+                        scorebookFC[coord] = float(score)
                 else:
-                scorebookFC[coord] = float(score)
-        else:
-        index = row.find("NCDS", 40)
-        if not index == -1:
-            inforow = row[index:]
-            CDSSfield = re.split(r'[;]', inforow)[0]
-            score = float(re.split(r'[=]+', CDSSfield)[-1].rstrip())
-            if coord in scorebookFN:
-                continue
-            else:
-                scorebookFN[coord] = float(score)
-    if coord in countbookF:
-        countbookF[coord] += 1
-    else:
-        countbookF[coord] = float(1)
+                    index = row.find("NCDS", 40)
+                    if not index == -1:
+                        inforow = row[index:]
+                        CDSSfield = re.split(r'[;]', inforow)[0]
+                        score = float(re.split(r'[=]+', CDSSfield)[-1].rstrip())
+                    if coord in scorebookFN:
+                        continue
+                    else:
+                        scorebookFN[coord] = float(score)
+                if coord in countbookF:
+                    countbookF[coord] += 1
+                else:
+                    countbookF[coord] = float(1)
     return (scorebookFN, scorebookFC, countbookF, variantCoordList)
 
 
