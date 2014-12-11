@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bda9fff-49af-45ef-aba7-e21dadb9bf5c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TRIfle/TRIfle-filter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py" afterPath="$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="4bda9fff-49af-45ef-aba7-e21dadb9bf5c" name="Default" comment="" />
     <ignored path="MelanoSNP-NC.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +27,8 @@
       <file leaf-file-name="TRIfle-getRawScores.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.6911764" vertical-offset="1750" max-vertical-offset="2445">
-              <caret line="40" column="122" selection-start-line="40" selection-start-column="122" selection-end-line="40" selection-end-column="122" />
+            <state vertical-scroll-proportion="0.25" vertical-offset="1750" max-vertical-offset="2445">
+              <caret line="128" column="21" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
               </folding>
@@ -612,8 +608,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6911764" vertical-offset="1750" max-vertical-offset="2445">
-          <caret line="40" column="122" selection-start-line="40" selection-start-column="122" selection-end-line="40" selection-end-column="122" />
+        <state vertical-scroll-proportion="0.25" vertical-offset="1750" max-vertical-offset="2445">
+          <caret line="128" column="21" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
           </folding>
