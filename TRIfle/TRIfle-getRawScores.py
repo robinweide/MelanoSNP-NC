@@ -5,9 +5,10 @@ import re
 import csv
 import numpy
 from pprint import pprint
+
 __author__ = 'Robin van der Weide'
 
-#Command-line thingies
+# Command-line thingies
 parser = argparse.ArgumentParser(
     description='This is TRIfle: integrated non-coding variant prioritisation. Please give ONE input-file.')
 parser.add_argument('-f', '--Funseq2', help='input: list of Output.vcf', required=False)
@@ -34,32 +35,37 @@ def funseq2scorecount(Ffile, scorebookFN, scorebookFC, countbookF, variantCoordL
             continue
         else:
             fields = re.split(r'\t+', row)
-            coord = str(fields[0]) + str(":") + str(fields[1] + str("|") + str(fields[4]))
-            variantCoordList.append(coord)
-            index = row.find("CDSS", 40)
-            if not index == -1:
-                inforow = row[index:]
+            if float(fields[5]) < float(30):
+                continue
+            else:
+                coord = str(fields[0]) + str(":") + str(fields[1]) + str("|") + str(fields[3]) + str("/") + str(fields[4])
+                variantCoordList.append(coord)
+                index = row.find("CDSS", 40)
+                if not index == -1:
+                    inforow = row[index:]
                 CDSSfield = re.split(r'[;]', inforow)[0]
                 score = float(re.split(r'[=]+', CDSSfield)[-1].rstrip())
                 if coord in scorebookFC:
                     continue
                 else:
-                    scorebookFC[coord] = float(score)
+                scorebookFC[coord] = float(score)
+        else:
+        index = row.find("NCDS", 40)
+        if not index == -1:
+            inforow = row[index:]
+            CDSSfield = re.split(r'[;]', inforow)[0]
+            score = float(re.split(r'[=]+', CDSSfield)[-1].rstrip())
+            if coord in scorebookFN:
+                continue
             else:
-                index = row.find("NCDS", 40)
-                if not index == -1:
-                    inforow = row[index:]
-                    CDSSfield = re.split(r'[;]', inforow)[0]
-                    score = float(re.split(r'[=]+', CDSSfield)[-1].rstrip())
-                    if coord in scorebookFN:
-                        continue
-                    else:
-                        scorebookFN[coord] = float(score)
-            if coord in countbookF:
-                countbookF[coord] += 1
-            else:
-                countbookF[coord] = float(1)
-    return(scorebookFN, scorebookFC, countbookF, variantCoordList)
+                scorebookFN[coord] = float(score)
+    if coord in countbookF:
+        countbookF[coord] += 1
+    else:
+        countbookF[coord] = float(1)
+    return (scorebookFN, scorebookFC, countbookF, variantCoordList)
+
+
 def cadd2scorecount(Ffile, scorebookC, countbookC, variantCoordList):
     score = 0.0
     coord = ""
@@ -68,19 +74,19 @@ def cadd2scorecount(Ffile, scorebookC, countbookC, variantCoordList):
             continue
         else:
             fields = re.split(r'\t+', row)
-            coord = str(str("chr") + fields[0] + str(":") + str(fields[1]) + str("|") + str(fields[3]))
+            coord = str(str("chr") + fields[0] + str(":") + str(fields[1]) + str("|") + str(fields[2]) + str("/") + str(fields[3]))
             variantCoordList.append(coord)
             score = float(fields[5])
             if coord in scorebookC:
                 if float(scorebookC[coord]) < float(score):
                     scorebookC[coord] = float(score)
             else:
-                    scorebookC[coord] = score
+                scorebookC[coord] = score
             if coord in countbookC:
                 countbookC[coord] += 1
             else:
                 countbookC[coord] = float(1)
-    return(scorebookC, countbookC, variantCoordList)
+    return (scorebookC, countbookC, variantCoordList)
 
 
 #General declarations
@@ -105,14 +111,15 @@ if args['Funseq2'] is not None:
     Ffile = open(args['Funseq2'], 'r')
     for row in Ffile:
         frow = open(row.rstrip(), 'r')
-        scorebookFN, scorebookFC, countbookF, variantCoordList = funseq2scorecount(frow, scorebookFN, scorebookFC, countbookF, variantCoordList)
+        scorebookFN, scorebookFC, countbookF, variantCoordList = funseq2scorecount(frow, scorebookFN, scorebookFC,
+                                                                                   countbookF, variantCoordList)
         frow.close()
     Ffile.close()
 if args['CADD'] is not None:
     Cfile = open(args['CADD'], 'r')
     for row in Cfile:
         crow = open(row.rstrip(), 'r')
-        scorebookC, countbookC, variantCoordList = cadd2scorecount(crow, scorebookC, countbookC,variantCoordList)
+        scorebookC, countbookC, variantCoordList = cadd2scorecount(crow, scorebookC, countbookC, variantCoordList)
         crow.close()
     Cfile.close()
 if args['SuRFR'] is not None:
@@ -122,7 +129,7 @@ if args['DANN'] is not None:
     for row in Cfile:
         crow = open(row.rstrip(), 'r')
         scorebookD, countbookD, variantCoordList = cadd2scorecount(crow, scorebookD, countbookD, variantCoordList)
-        casecounter +=1
+        casecounter += 1
         crow.close()
     Cfile.close()
 if args['controlDANN'] is not None:
@@ -130,18 +137,21 @@ if args['controlDANN'] is not None:
     for row in Cfile:
         crow = open(row.rstrip(), 'r')
         cscorebookD, ccountbookD, cvariantCoordList = cadd2scorecount(crow, cscorebookD, ccountbookD, cvariantCoordList)
-        controlcounter +=1
+        controlcounter += 1
         crow.close()
     Cfile.close()
-
 
 coords = list(set(variantCoordList))
 coords.sort()
 
 #print tab-delim: coord:FC:FN:C:Count
-header = ["#Coord|mut","Funseq2(Nc)","Funseq2(C)","CADD(Phred)","DANN","FrequencyCase","FrequencyControl","PercCase","PercControl"]
-print('\t'.join(map(str,header)))
+header = ["#Coord|mut", "Funseq2(Nc)", "Funseq2(C)", "CADD(Phred)", "DANN", "FrequencyCase", "FrequencyControl",
+          "PercCase", "PercControl"]
+print('\t'.join(map(str, header)))
 
 for coord in coords:
-    row = [coord, scorebookFN.get(coord, float(0)),scorebookFC.get(coord, float(0)), scorebookC.get(coord, float(0)),scorebookD.get(coord, float(0)), countbookD.get(coord, float(0)), ccountbookD.get(coord, float(0)), float(100 * float(countbookD.get(coord, float(0)))/float(casecounter)), float(100 * float(ccountbookD.get(coord, float(0)))/float(controlcounter))]
-    print('\t'.join(map(str,row)))
+    row = [coord, scorebookFN.get(coord, float(0)), scorebookFC.get(coord, float(0)), scorebookC.get(coord, float(0)),
+           scorebookD.get(coord, float(0)), countbookD.get(coord, float(0)), ccountbookD.get(coord, float(0)),
+           float(100 * float(countbookD.get(coord, float(0))) / float(casecounter)),
+           float(100 * float(ccountbookD.get(coord, float(0))) / float(controlcounter))]
+    print('\t'.join(map(str, row)))
