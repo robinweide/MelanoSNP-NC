@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import sys
 import argparse
+import os
 import re
 
 __author__ = 'Robin van der Weide'
@@ -25,4 +26,4 @@ for region in regions:
 	for vcf in caseFiles:
 		os.system("samtools faidx " + refFile + " " + coord + " | vcf-consensus " + vcf + " >> " + transcript + "_case.fasta")
 	for vcf in controlFiles:
-			os.system("samtools faidx " + refFile + " " + coord + " | vcf-consensus " + vcf + " >> " + transcript + "_control.fasta")
+		os.system("samtools faidx " + refFile + " " + coord + " | vcf-consensus " + vcf + " >> " + transcript + "_control.fasta")
