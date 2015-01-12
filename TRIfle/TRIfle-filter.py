@@ -52,3 +52,7 @@ for row in ifile:
                     rncfile.write(outputLine)
         #print(cr)
 ifile.close()
+
+#to make a direct vcf of this output: cat rareCodingCandidates | \
+# sed 's/:/  /g' | sed 's/chr//g' | sed 's/-/       /g' | sed 's$/$ $g' | \
+# awk '{print $1"\t"$2"\t.\t"$4"\t"$5"\t30\tRANK=XXX;CASE="$11";CONTROL="$10}' > rareCodingCandidates.vcf

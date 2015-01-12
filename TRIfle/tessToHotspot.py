@@ -7,6 +7,7 @@ __author__ = 'Robin van der Weide'
 parser = argparse.ArgumentParser(
     description='Takes tess bulk-file and prints a list of consequences (coord | tfbs | consequence).\n Remember: it prints each consequence Ncases times.')
 parser.add_argument('-i', '--input', help='TESS bulk-file', required=True)
+parser.add_argument('-n', '--nx', help='do everything x times the number of motifs (0 or 1)', required=True, default=0, type=int)
 parser.add_argument('-t', '--treshold', help='Delta-OR treshold', required=False, default=1, type=float)
 args = vars(parser.parse_args())
 
@@ -27,7 +28,7 @@ for row in ifile:
     x,rank = r.split('=')
     x,freq = f.split('=')
     dictEntry = str(coord) + str("|") + str(MatrixId)
-    coordCounter[coord] =+ int(freq)
+    coordCounter[coord] =+ float(freq)
     if genotype == "MT":
         if dictEntry in MTdict:
             if MTdict[dictEntry] > La:
@@ -50,31 +51,45 @@ for row in ifile:
     MatrixId,SequenceID,La,HitBegin,HitEnd,Sense,genotype,coord,mut,rank,freq(case)
     '''
 ifile.close()
-
+memoryMCoord = {}
+memoryWCoord = {}
 for entry,value in WTdict.items():
     coord,tfbs = entry.split('|')
-    if entry in MTdict:
-        if value == MTdict[entry]:
-            continue
-        else:
-            if float(value) > (float(MTdict[entry]) + float(args['treshold'])):
-                for _ in itertools.repeat(None, coordCounter[coord]):
-                    print(str(coord) + str("\t") + str(tfbs) + str("\t") + str("LOSS"))
-            elif float(value) < (float(MTdict[entry]) - float(args['treshold'])):
-                for _ in itertools.repeat(None, coordCounter[coord]):
-                    print(str(coord) + str("\t") + str(tfbs) + str("\t") + str("GAIN"))
+    if coord in memoryWCoord:
+        continue
     else:
-        for _ in itertools.repeat(None, coordCounter[coord]):
-            print(str(coord) + str("\t") + str(tfbs) + str("\t") + str("LOSS"))
+        if entry in MTdict:
+            if value == MTdict[entry]:
+                continue
+            else:
+                if float(value) > (float(MTdict[entry]) + float(args['treshold'])):
+                    for _ in itertools.repeat(None, int(coordCounter[coord])):
+                        print(str(coord) + str("\t") + str(tfbs) + str("\t") + str("LOSS"))
+                        if args['nx'] == int(0):
+                            memoryWCoord[coord] = 1
+                elif float(value) < (float(MTdict[entry]) - float(args['treshold'])):
+                    for _ in itertools.repeat(None, int(coordCounter[coord])):
+                        print(str(coord) + str("\t") + str(tfbs) + str("\t") + str("GAIN"))
+                        if args['nx'] == int(0):
+                            memoryWCoord[coord] = 1
+        else:
+            for _ in itertools.repeat(None, int(coordCounter[coord])):
+                print(str(coord) + str("\t") + str(tfbs) + str("\t") + str("LOSS"))
+                if args['nx'] == int(0):
+                    memoryWCoord[coord] = 1
 
 for entry,value in MTdict.items():
     coord,tfbs = entry.split('|')
-    if entry in WTdict:
+    if coord in memoryMCoord:
         continue
     else:
-        for _ in itertools.repeat(None, coordCounter[coord]):
-            print(str(coord) + str("\t") + str(tfbs) + str("\t") + str("GAIN"))
-
+        if entry in WTdict:
+            continue
+        else:
+            for _ in itertools.repeat(None, int(coordCounter[coord])):
+                print(str(coord) + str("\t") + str(tfbs) + str("\t") + str("GAIN"))
+                if args['nx'] == int(0):
+                    memoryMCoord[coord] = 1
 
 '''
 detailsfile:

@@ -2,6 +2,7 @@
 import argparse
 import re
 import sys
+from scipy import stats
 import math
 import pprint
 
@@ -13,7 +14,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument('-a', '--cases', help='A sorted (sort -k 1,1n -k2,2n) and expanded BED of cases', required=True)
 parser.add_argument('-r', '--ref', help='A sorted (sort -k 1,1n -k2,2n) and expanded BED of all possible start-locations of the window (e.g. reference, targets)', required=True)
 parser.add_argument('-b', '--controls', help='A sorted (sort -k 1,1n -k2,2n) and expanded BED of controls', required=False)
-parser.add_argument('-t', '--treshold', help='Difference treshold', required=False, default=1, type=float)
+parser.add_argument('-t', '--treshold', help='Percentage-difference treshold', required=False, default=0, type=float)
 parser.add_argument('-Na', '--CasesN', help='counts of case samples', required=False, default=1, type=float)
 parser.add_argument('-Nb', '--ControlsN', help='counts of control samples', required=False, default=1, type=float)
 parser.add_argument('-w', '--window', help='Sliding-window size', required=True)
@@ -22,9 +23,20 @@ args = vars(parser.parse_args())
 reflist = []
 cases = []
 controls = []
+rawcasesWindowsDict ={}
+rawcontrolsWindowsDict ={}
 casesWindowsDict ={}
 controlsWindowsDict ={}
 windowSize = args['window']
+
+allname = str("./") + str(int(windowSize)) + str("_window_all") +  str(".tsv")
+allfile = open(allname,'w+')
+chiname = str("./") + str(int(windowSize)) + str("_window_CHI2Y") + str(".tsv")
+chifile = open(chiname,'w+')
+chinameS = str("./") + str(int(windowSize)) + str("_window_CHI2Ys") + str(".tsv")
+finame = str("./") + str(int(windowSize)) + str("_window_FISHER") + str(".tsv")
+
+
 
 sys.stderr.write("Loading reference" + str("\n"))
 rfile = open(args['ref'], 'r')
@@ -49,8 +61,8 @@ if args['controls'] is not None:
         controls.append(item)
 
 
-
-perC = int(0)
+sys.stderr.write("Running sliding window:\n")
+perC = float(0)
 locCounta = float(0)
 locCountb = float(0)
 refcount = int(0)
@@ -72,12 +84,15 @@ for coord in reflist:
     leng = len(reflist)
     perc = 100 * float(refcount)/float(leng)
     if perc >= perC:
-        sys.stderr.write("Progress: " + str(perC) + str("%\n"))
-        perC += 10
+        #sys.stderr.write(str("\t") + str(perC) + str("%"))
+        sys.stderr.write("\r%    d%%    " % perc)
+        sys.stderr.flush()
+        perC += float(0.5)
     if float(len(cases)) > float(0):
         testcase = cases[0]
     else:
-        sys.stderr.write("Progress: " + str("100") + str("%\n"))
+        sys.stderr.write("\r%    d%%    " % int(100))
+        sys.stderr.flush()
         break
     c,l = testcase.split(':')
     C = c.upper()
@@ -122,26 +137,52 @@ for coord in reflist:
                 snpS = float(ss)
                 if CHR == snpC and MIN <= snpS <= MAX:
                     locCountb += float(1)
-                    #controlsWindowsDict[entry] += float(1)
-    #print(locCountb)
-    #print(locCounta)
+                if CHR >= snpC and snpS < MIN:
+                    controls.remove(snp)
+                elif CHR > snpC:
+                    controls.remove(snp)
+                if snpC >= CHR and snpS > MAX:
+                    break
+
     if args['controls'] is not None and locCountb > float(0):
-        controlsWindowsDict[entry] = math.log10(locCountb/float(windowSize))/float(args['ControlsN'])
+        controlsWindowsDict[entry] = (locCountb/float(args['ControlsN']))
+        rawcontrolsWindowsDict[entry] = locCountb
     else:
         controlsWindowsDict[entry] = float(0)
+        rawcontrolsWindowsDict[entry] = float(0)
     if locCounta > float(0):
-        casesWindowsDict[entry] = math.log10(locCounta/float(windowSize))/float(args['CasesN'])
+        casesWindowsDict[entry] = (locCounta/args['CasesN'])
+        rawcasesWindowsDict[entry] = locCounta
     else:
-        casesWindowsDict[entry] = float(0)
-sys.stderr.write("Finding and saving relevant windows" + str("\n"))
-for k,v in casesWindowsDict.items():
-    if controlsWindowsDict[k] < v:
-        print(str(k) + "\t" + str(v) + "\t" + str(controlsWindowsDict[k]))
-#pprint.pprint(controlsWindowsDict)
+        rawcasesWindowsDict[entry] = float(0)
+sys.stderr.write("\nFinding and saving relevant windows" + str("\n"))
+fifile = open(finame,'w+')
+for k,v in rawcasesWindowsDict.items():
+    chr,loc = k.split(':')
+    star,stop = loc.split('-')
+    outputLine = str(str(chr)  + "\t" + str(star)  + "\t" + str(stop))
+    OM = float(v+0.0000001)
+    EM = float(rawcontrolsWindowsDict[k]+0.0000001)
+    OWT = float(float(args['CasesN']*float(windowSize))-OM)
+    EWT = float(float(args['ControlsN']*float(windowSize))-EM)
+    EM1 = float((EM/float(args['ControlsN']))*float(args['CasesN']))
+    EWT1 = float((EWT/float(args['ControlsN']))*float(args['CasesN']))
+    CHI = float(((((OM - EM1)-0.5)**2)/EM1) + ((((OWT - EWT1)-0.5)**2)/EWT1))
+    if CHI > float(3.841):
+        chifile.write(outputLine + "\t" + str(OM-0.0000001) + "\t" + str(EM-0.0000001) + "\t" + str((OM-0.0000001)/(EM1-0.0000001)) + "\t" + str(CHI) + "\n")
+    allfile.write(outputLine + "\t" + str(OM-0.0000001) + "\t" + str(EM-0.0000001) + "\n")
+    oddsratio, pvalue = stats.fisher_exact([[OM, EM1], [OWT, EWT1]])
+    if pvalue <= float(0.05):
+        fifile.write(outputLine + "\t" + str(OM-0.0000001) + "\t" + str(EM-0.0000001) + "\t" + str((OM-0.0000001)/(EM1-0.0000001)) + "\t" + str(pvalue) + "\n")
 sys.stderr.write("DONE!!!" + str("\n"))
 
 
-#for window,freq in casesWindowsDict.items():
-#    print(str(window) + str("\t") + str(freq) + str("\t") + str(controlsWindowsDict[window]))
-    #if float(controlsWindowsDict[window] + args['treshold']) <= float(freq) <= float(controlsWindowsDict[window] - args['treshold']):
-    #    print(str(window) + str("\t") + str(freq) + str("\t") + str(controlsWindowsDict[window]))
+
+chifile.close()
+
+sys.stderr.write("Now do the following to steps to get rid of overlaps:" + str("\n"))
+sys.stderr.write("||| \t cat " + chiname + "  | sed $'s/:/\t/' | sed $'s/-/\t/' | sort -k1,1n -k2,2n > tmp" + str("\t|||\n"))
+sys.stderr.write("||| \t bedtools merge -i tmp -c 4,5,6,7 -o mean,mean,mean,mean -d 20 | sort -k6,6n > " + chiname + ".mergedNsorted.tsv ; rm tmp" + str("\t|||\n"))
+sys.stderr.write("ENJOY :)" + str("\n"))
+
+
