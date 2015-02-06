@@ -1,0 +1,78 @@
+\documentclass[fontsize=12pt]{article}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{caption}
+\usepackage{gantt}
+\usepackage{rotating}
+\begin{document}
+
+
+%\section*{Timetable}
+\definecolor{DIOgroen}{HTML}{67AB9F}
+\definecolor{DIOblauw}{HTML}{7EA6E0}
+\definecolor{DIOrood}{HTML}{EA6B66}
+\definecolor{DIOgeel}{HTML}{FFD966}
+\begin{figure}
+\begin{sideways}
+
+
+
+
+\begin{gantt}[xunitlength=0.5cm,fontsize=\scriptsize,titlefontsize=\small,drawledgerline=true]{23}{18}
+    \begin{ganttitle}
+      \titleelement{February}{18}
+    \end{ganttitle}
+   \begin{ganttitle}
+        \numtitle{1}{1}{18}{1}
+%      \numtitle{1}{1}{4}{1}
+%      \numtitle{1}{1}{4}{1}
+%      \numtitle{1}{1}{3}{1}
+    \end{ganttitle}
+    \ganttgroup{\textbf{TFBS}}{0}{8}
+    \ganttbar[color=DIOblauw]{Extracting $\Delta$TFBS in promoters ($Z\geq10 \mid\mid  Fs\leq0.01$)}{0}{2}
+\ganttmilestone[color=DIOblauw]{$\Delta$TFBS in promoters (BED)}{2}
+\ganttmilestone[color=DIOblauw]{$\Delta$TFBS in promoters in ENCODE TF-regions (BED)}{2}
+        \ganttbar[color=DIOblauw]{Extracting $\Delta$TFBS in 60bp windows ($Z\geq10 \mid\mid  Fs\leq0.01$)}{2}{2}
+\ganttmilestone[color=DIOblauw]{$\Delta$TFBS in 60bp windows (BED)}{4}
+\ganttmilestone[color=DIOblauw]{$\Delta$TFBS in 60bp windows in ENCODE TF-regions (BED)}{4}
+
+    \ganttbar[color=DIOblauw]{TcoF analysis of $\Delta$TFBS}{4}{4}
+\ganttmilestone[color=DIOblauw]{TF-interacting proteins (freq-ranked BED)}{7}
+\ganttcon{2}{3}{4}{9}
+\ganttcon{4}{6}{4}{9}
+\ganttmilestone[color=DIOblauw]{Over/underrepresented ontologies and Complexes of TFs (freq-ranked BED)}{8}
+\ganttmilestone[color=DIOblauw]{Over/underrepresented ontologies and Complexes of TF-IPs (freq-ranked BED)}{8}
+    \ganttgroup{\textbf{miRNA}}{9}{8}
+    \ganttbar[color=DIOrood]{Analysis of $\Delta$miRNA-BS}{9}{3}    
+\ganttmilestone[color=DIOrood]{Over/underrepresented $\Delta$miRNA-targets (freq-ranked BED)}{12}
+\ganttmilestone[color=DIOrood]{Over/underrepresented $\Delta$miRNA (freq-ranked BED)}{12}
+    \ganttbar[color=DIOrood]{Ontology analysis}{12}{3}    
+    \ganttmilestone[color=DIOrood]{Over/underrepresented $\Delta$miRNA ontologies (freq-ranked BED)}{15}
+    \ganttmilestone[color=DIOrood]{Over/underrepresented $\Delta$miRNA-target ontologies (freq-ranked BED)}{15}
+    \ganttcon{12}{14}{12}{17}
+    \ganttgroup{\textbf{misc}}{15}{3}
+    \ganttbar[color=DIOgroen]{Investigating post-transcriptional modification \& localisation}{15}{3}       
+    
+            \ganttbar[color=DIOgroen]{Investigating pseudogenes: gene conversion \& endo-siRNA}{15}{3}          
+
+    
+
+    
+    
+%    \ganttbar[color=yellow]{\textbf{Writing thesis}}{11}{1}
+%    \ganttbar{task 1}{2}{12}
+%    \ganttgroup{a group of tasks}{6}{8}
+%    \ganttbar{task 2}{5}{8}
+%    \ganttbar[color=DIOblauw]{task 3}{8}{3}
+%    \ganttbar{task 4}{8}{3}
+%    \ganttcon{7}{4}{8}{6}
+%    \ganttbar{task 5}{8}{5}
+%    \ganttbarcon[color=DIOrood]{task 6}{8}{5}
+%    \ganttbarcon{task 7}{8}{5}
+\end{gantt}
+\end{sideways}
+\caption{Project-planning 4-28feb (workdays)}
+\end{figure}
+
+
+
+\end{document}

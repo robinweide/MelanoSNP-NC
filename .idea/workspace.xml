@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bda9fff-49af-45ef-aba7-e21dadb9bf5c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TRIfle/getConsensusPromoter.py" afterPath="$PROJECT_DIR$/TRIfle/getConsensusPromoter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TRIfle/oPossumParser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MelanoSNP-NC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +30,8 @@
       <file leaf-file-name="TRIfle-getRawScores.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.076923" vertical-offset="870" max-vertical-offset="2445">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="74" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="2445">
+              <caret line="33" column="31" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="31" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
               </folding>
@@ -41,7 +42,7 @@
       <file leaf-file-name="TRIfle-filter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-filter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+            <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="945">
               <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
@@ -53,22 +54,10 @@
       <file leaf-file-name="Extract21BpSeq.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TRIfle/Extract21BpSeq.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="735">
-              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="98" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="735">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getConsensusPromoter.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TRIfle/getConsensusPromoter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6392694" vertical-offset="0" max-vertical-offset="657">
-              <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-              <folding>
-                <element signature="e#18#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,7 +66,7 @@
       <file leaf-file-name="tessToHotspot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TRIfle/tessToHotspot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="1545">
+            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1545">
               <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
@@ -89,8 +78,8 @@
       <file leaf-file-name="windowedCaseControlEnrichment.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TRIfle/windowedCaseControlEnrichment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.076923" vertical-offset="2224" max-vertical-offset="2910">
-              <caret line="164" column="13" selection-start-line="164" selection-start-column="13" selection-end-line="164" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1084" max-vertical-offset="2910">
+              <caret line="86" column="39" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="39" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
               </folding>
@@ -101,10 +90,22 @@
       <file leaf-file-name="expandBED.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TRIfle/expandBED.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="360">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="oPossumParser.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TRIfle/oPossumParser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.36996904" vertical-offset="766" max-vertical-offset="1815">
+              <caret line="67" column="143" selection-start-line="67" selection-start-column="143" selection-end-line="67" selection-end-column="143" />
+              <folding>
+                <element signature="e#210#220#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,8 +114,8 @@
       <file leaf-file-name="windowMotifToGO.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TRIfle/windowMotifToGO.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1621" max-vertical-offset="2265">
-              <caret line="136" column="86" selection-start-line="136" selection-start-column="86" selection-end-line="136" selection-end-column="107" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="2265">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
               <folding>
                 <element signature="e#18#33#0" expanded="true" />
               </folding>
@@ -125,8 +126,8 @@
       <file leaf-file-name="tfChecker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TRIfle/tfChecker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-              <caret line="14" column="121" selection-start-line="14" selection-start-column="121" selection-end-line="14" selection-end-column="121" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="345">
+              <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
               <folding>
                 <element signature="e#21#31#0" expanded="true" />
               </folding>
@@ -153,18 +154,20 @@
         <option value="$PROJECT_DIR$/TRIfle/Extract21BpSeq.py" />
         <option value="$PROJECT_DIR$/TRIfle/tessToHotspot.py" />
         <option value="$PROJECT_DIR$/TRIfle/reduceWindows.py" />
-        <option value="$PROJECT_DIR$/TRIfle/windowedCaseControlEnrichment.py" />
         <option value="$PROJECT_DIR$/TRIfle/windowMotifToGO.py" />
         <option value="$PROJECT_DIR$/TRIfle/tfChecker.py" />
         <option value="$USER_HOME$/Dropbox/getConsensusPromoter.py" />
         <option value="$PROJECT_DIR$/TRIfle/getConsensusPromoter.py" />
+        <option value="$USER_HOME$/Downloads/windowed_coverage.py" />
+        <option value="$PROJECT_DIR$/TRIfle/windowedCaseControlEnrichment.py" />
+        <option value="$PROJECT_DIR$/TRIfle/oPossumParser.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="165" />
+    <option name="x" value="4" />
     <option name="y" value="23" />
-    <option name="width" value="1072" />
+    <option name="width" value="1188" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -197,7 +200,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/TRIfle" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/windowed_coverage.py" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -389,28 +392,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="165" y="23" width="1072" height="777" extended-state="0" />
+    <frame x="4" y="23" width="1188" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2492864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45768568" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45765936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34014598" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909605" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997006" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -465,28 +468,38 @@
           <line>42</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/TRIfle/oPossumParser.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/TRIfle/oPossumParser.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="21" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
+    <entry file="file://$PROJECT_DIR$/TRIfle/windowMotifToGO.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="2445">
-          <caret line="116" column="17" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="2265">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-filter.py">
+    <entry file="file://$PROJECT_DIR$/TRIfle/tfChecker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="175" max-vertical-offset="900">
-          <caret line="47" column="44" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="345">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
           <folding>
-            <element signature="e#18#33#0" expanded="true" />
+            <element signature="e#21#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -908,13 +921,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TRIfle/tessToHotspot.py">
+    <entry file="file://$PROJECT_DIR$/TRIfle/getConsensusPromoter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="865" max-vertical-offset="1545">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <element signature="e#18#33#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="657">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="127" />
         </state>
       </provider>
     </entry>
@@ -928,10 +938,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
+    <entry file="file://$PROJECT_DIR$/TRIfle/expandBED.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.076923" vertical-offset="870" max-vertical-offset="2445">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="74" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
           </folding>
@@ -940,18 +950,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TRIfle/windowedCaseControlEnrichment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.076923" vertical-offset="2224" max-vertical-offset="2910">
-          <caret line="164" column="13" selection-start-line="164" selection-start-column="13" selection-end-line="164" selection-end-column="13" />
-          <folding>
-            <element signature="e#18#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TRIfle/windowMotifToGO.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1621" max-vertical-offset="2265">
-          <caret line="136" column="86" selection-start-line="136" selection-start-column="86" selection-end-line="136" selection-end-column="107" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1084" max-vertical-offset="2910">
+          <caret line="86" column="39" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="39" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
           </folding>
@@ -961,49 +961,59 @@
     <entry file="file://$PROJECT_DIR$/TRIfle/tfChecker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <caret line="14" column="121" selection-start-line="14" selection-start-column="121" selection-end-line="14" selection-end-column="121" />
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
           <folding>
             <element signature="e#21#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TRIfle/tessToHotspot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="865" max-vertical-offset="1545">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TRIfle/Extract21BpSeq.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="735">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="98" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="735">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TRIfle/expandBED.py">
+    <entry file="file://$PROJECT_DIR$/TRIfle/windowMotifToGO.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="2265">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
           <folding>
             <element signature="e#18#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Dropbox/getConsensusPromoter.py">
+    <entry file="file://$PROJECT_DIR$/TRIfle/TRIfle-getRawScores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2445">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="31" />
           <folding>
-            <element signature="e#18#28#0" expanded="true" />
+            <element signature="e#18#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TRIfle/getConsensusPromoter.py">
+    <entry file="file://$PROJECT_DIR$/TRIfle/oPossumParser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6392694" vertical-offset="0" max-vertical-offset="657">
-          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.36996904" vertical-offset="766" max-vertical-offset="1815">
+          <caret line="67" column="143" selection-start-line="67" selection-start-column="143" selection-end-line="67" selection-end-column="143" />
           <folding>
-            <element signature="e#18#28#0" expanded="true" />
+            <element signature="e#210#220#0" expanded="true" />
           </folding>
         </state>
       </provider>
