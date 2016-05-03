@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bda9fff-49af-45ef-aba7-e21dadb9bf5c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TRIfle/oPossumParser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TRIfle/oPossumParser.py" afterPath="$PROJECT_DIR$/TRIfle/oPossumParser.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MelanoSNP-NC.iws" />
@@ -102,8 +102,8 @@
       <file leaf-file-name="oPossumParser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TRIfle/oPossumParser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36996904" vertical-offset="766" max-vertical-offset="1815">
-              <caret line="67" column="143" selection-start-line="67" selection-start-column="143" selection-end-line="67" selection-end-column="143" />
+            <state vertical-scroll-proportion="0.7511381" vertical-offset="0" max-vertical-offset="1695">
+              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
               <folding>
                 <element signature="e#210#220#0" expanded="true" />
               </folding>
@@ -165,7 +165,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
+    <option name="x" value="92" />
     <option name="y" value="23" />
     <option name="width" value="1188" />
     <option name="height" value="777" />
@@ -392,7 +392,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="1188" height="777" extended-state="0" />
+    <frame x="92" y="23" width="1188" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1010,8 +1010,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TRIfle/oPossumParser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36996904" vertical-offset="766" max-vertical-offset="1815">
-          <caret line="67" column="143" selection-start-line="67" selection-start-column="143" selection-end-line="67" selection-end-column="143" />
+        <state vertical-scroll-proportion="0.7511381" vertical-offset="0" max-vertical-offset="1695">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
           <folding>
             <element signature="e#210#220#0" expanded="true" />
           </folding>

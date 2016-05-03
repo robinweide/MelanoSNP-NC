@@ -64,21 +64,13 @@ for file in paths:
             continue
         else:
             ID,TF,Class,Family,TaxGroup,IC,GCContent,Targetseqhits,Targetseqnonhits,Backgroundseqhits,Backgroundseqnonhits,TargetTFBShits,TargetTFBSnucleotiderate,BackgroundTFBShits,BackgroundTFBSnucleotiderate,Zscore,Fisherscore,KSscore = row.split("\t")
-            print(fileName + "-" + TF)
+            #print(fileName + "-" + TF)
             if float(Targetseqhits) + float(Backgroundseqhits) > float(0) and float(Targetseqnonhits) + float(Backgroundseqnonhits) > float(0):
-                filee = open("./" + str(fileName) + "/" + str(TF) + ".txt.txt", 'r')
+                filee = open("./" + str(fileName) + "/" + str(TF) + ".txt.txt_coords.txt", 'r')
                 for line in filee:
-                    SeqID = ""
-                    if not line.startswith("_"):
-                        SeqID, Start, Stop, Strand, Score, pScore, Seq = line.split("\t")
-                        Chr,coord = SeqID.split(":")
-                        SeqStart, SeqStop = coord.split("-")
-                        print(Chr + ":" + str(int(SeqStart)+int(Start)) + "-" + str(int(SeqStart) + int(Stop)))
-                    else:
-                        streep, Start, Stop, Strand, Score, pScore, Seq = line.split("\t")
-                        Chr,coord = SeqID.split(":")
-                        SeqStart, SeqStop = coord.split("-")
-                        print(Chr + ":" + str(int(SeqStart)+int(Start)) + "-" + str(int(SeqStart) + int(Stop)))
+                    ratio = float(float(int(Targetseqhits)+int(Targetseqnonhits))/args['Ncase'])
+                    chr, Start, Stop = line.split("\t")
+                    print(chr + "\twhole-promoter oPOSSUM3-SSA\tTF_binding_site\t" + str(int(Start)) + "\t" + str(int(Stop)) + "\t" + str(round(float(float(float(Targetseqhits)/ratio)/(float(args['Ncase']))*100),2)) + "/" + str(round(float(float(float(Backgroundseqhits)/ratio)/(float(args['Ncontrol']))*100),2)) + "\t.\t.\tID=" + ID + ";Note=" + ensemblBiomartEnstEnsgNameDictName[fileName])
                 #print(ensemblBiomartEnstEnsgNameDictEnsg[fileName] + ";" + ensemblBiomartEnstEnsgNameDictName[fileName] + ";" + fileName + ";" + TF + ";" +Class + ";" +Family + ";" +str(Targetseqhits) + ";" + str(Targetseqnonhits) + ";" +str(Backgroundseqhits) + ";" + str(Backgroundseqnonhits) + ";" + str(Fisherscore) + ";" + str(Zscore)+ ";" + str(KSscore))
 #            ratio = float(float(int(Targetseqhits)+int(Targetseqnonhits))/args['Ncase'])
 #            thit = int(int(Targetseqhits)/ratio)

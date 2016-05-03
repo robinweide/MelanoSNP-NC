@@ -1,0 +1,12 @@
+# Site-specific filtering
+# 1. Variant Quality Score Recalibration (VQSR)
+# 2. Genotype-level checks: Exclude sites that have a) depth < 8 OR b) GQ < 20
+# 3. Genotype call rate for sites must be >90%, if not site should be excluded
+vcftools --max-missing 0.1 --gzvcf round1_mpileup_multisample.vcf.gz --minDP 8 --minGQ 20 --recode-INFO-all --recode --out step_a2_a3
+# 4. Call rate between cases and controls per site must be similar - examine the call rate difference per site via a chi-squared test, exclude extreme values
+
+# Sample-level QC
+# 1. Ts/Tv ratio: For exomes this is normally between 2.7 and 3. Check in exons only, generate a distribution of these ratios, Ts/Tv vs frequency, log-normalise and remove samples 3 s.d. from the mean
+# 2. Number of variants (SNPs and indels) across samples must be similar
+# 3. Ancestry via PCA (Note: We don't have enough information in 63 loci to do this, but ask Leeds to confirm these are all European. I know from previous projects that there are some that are not)
+# 4. Remove related and duplicate samples. Normally this is done by IBD but again we do not have enough information, so again ask Leeds to confirm.
